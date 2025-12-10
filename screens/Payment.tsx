@@ -16,9 +16,12 @@ import Fontisto from 'react-native-vector-icons/Fontisto';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import { RadioButton } from 'react-native-paper';
 import { useCart } from '../context/context';
+import { useNavigation } from '@react-navigation/native';
 
 const Payment = () => {
   const route = useRoute();
+  const {cleaner} = route.params;
+  const navigation = useNavigation();
   const [checked, setChecked] = useState('debit');
   const {total} = useCart();
   return (
@@ -53,7 +56,9 @@ const Payment = () => {
             marginBottom: 20,
           }}
         >
+          <TouchableOpacity onPress={()=>navigation.navigate('Summary',{cleaner})}>
           <AntDesign name="arrowleft" color="orange" size={24} />
+          </TouchableOpacity>
           <Text style={{ fontSize: 20 }}>Payment</Text>
         </View>
         <View style={styles.bill}>

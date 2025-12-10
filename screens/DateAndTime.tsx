@@ -39,7 +39,7 @@ const DateAndTime = () => {
   const [selectedDeliveryTime, setSelectedDeliveryTime] = useState(null);
   const navigation = useNavigation();
   const route = useRoute();
-  const {cleaner} = route.params;
+  const { cleaner } = route.params;
 
   const days = Array.from({ length: 30 }, (_, i) => i + 1);
   const time = [];
@@ -69,8 +69,10 @@ const DateAndTime = () => {
         <View style={{ paddingHorizontal: 10, marginBottom: 50 }}>
           {/* Back & Title */}
           <View style={styles.headerRow}>
-            <TouchableOpacity onPress={()=>navigation.navigate('Location')}>
-            <AntDesign name="arrowleft" color="orange" size={24} />
+            <TouchableOpacity
+              onPress={() => navigation.navigate('Location', { cleaner })}
+            >
+              <AntDesign name="arrowleft" color="orange" size={24} />
             </TouchableOpacity>
             <Text style={styles.headerTitle}>Schedule Pickup and Delivery</Text>
           </View>
@@ -285,7 +287,7 @@ const DateAndTime = () => {
             borderRadius: 40,
             paddingVertical: 15,
           }}
-          onPress={()=>navigation.navigate('Summary')}
+          onPress={() => navigation.navigate('Summary', { cleaner })}
         >
           <Text
             style={{

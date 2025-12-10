@@ -18,8 +18,9 @@ import { useRoute } from '@react-navigation/native';
 import { useNavigation } from '@react-navigation/native';
 
 const OrderDetails = () => {
-  const { cart, total } = useCart(); 
+  const { cart, total } = useCart();
   const route = useRoute();
+  const { cleaner } = route.params;
   const navigation = useNavigation();
   return (
     <View style={{ flex: 1 }}>
@@ -38,7 +39,9 @@ const OrderDetails = () => {
 
       {/* BACK + TITLE */}
       <View style={styles.header}>
-        <AntDesign name="arrowleft" color="orange" size={24} />
+        <TouchableOpacity onPress={()=>navigation.navigate('Schedule',{cleaner})}>
+          <AntDesign name="arrowleft" color="orange" size={24} />
+        </TouchableOpacity>
         <Text style={{ fontSize: 20 }}>Order Summary</Text>
       </View>
 
@@ -102,10 +105,12 @@ const OrderDetails = () => {
           >
             Total Payment (Approx.)
           </Text>
-          <Text style={{ fontSize: 18,color:'orange' }}>${total+15}.00</Text>
+          <Text style={{ fontSize: 18, color: 'orange' }}>
+            ${total + 15}.00
+          </Text>
         </View>
         <TouchableOpacity
-        onPress={()=>navigation.navigate('Payment')}
+          onPress={() => navigation.navigate('Payment',{cleaner})}
           style={{
             backgroundColor: 'orange',
             borderRadius: 30,

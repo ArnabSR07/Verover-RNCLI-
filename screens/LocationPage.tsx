@@ -7,7 +7,7 @@ import {
   TextInput,
 } from 'react-native';
 import React, { useState } from 'react';
-
+import { Modal } from 'react-native';
 import Feather from 'react-native-vector-icons/Feather';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
@@ -16,6 +16,7 @@ import { useNavigation } from '@react-navigation/native';
 import { useRoute } from '@react-navigation/native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
+
 
 const LocationPage = () => {
   const navigation = useNavigation();
@@ -45,11 +46,11 @@ const LocationPage = () => {
     Arizona: ['Phoenix', 'Tempe', 'Tucson'],
   };
 
+  const [showStateModal, setShowStateModal] = useState(false);
+  const [showCityModal, setShowCityModal] = useState(false);
+
   const [selectedState, setSelectedState] = useState('');
   const [selectedCity, setSelectedCity] = useState('');
-
-  const [stateDropdownVisible, setStateDropdownVisible] = useState(false);
-  const [cityDropdownVisible, setCityDropdownVisible] = useState(false);
 
   return (
     <View>
@@ -174,7 +175,12 @@ const LocationPage = () => {
 
             <View style={{ flex: 1, gap: 10 }}>
               <Text>State</Text>
-              <TextInput style={styles.input}></TextInput>
+              <TouchableOpacity
+                style={styles.input}
+                onPress={() => setShowStateModal(true)}
+              >
+                <Text>{selectedState || 'Select State'}</Text>
+              </TouchableOpacity>
             </View>
 
             <View style={{ flex: 1, gap: 10 }}>
@@ -285,5 +291,48 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: 'white',
+  },
+  modalContainer: {
+    flex: 1,
+    backgroundColor: 'rgba(0,0,0,0.5)',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
+  modalBox: {
+    width: '80%',
+    maxHeight: '70%',
+    backgroundColor: 'white',
+    borderRadius: 15,
+    padding: 20,
+  },
+
+  modalTitle: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginBottom: 15,
+  },
+
+  modalItem: {
+    paddingVertical: 15,
+    borderBottomWidth: 1,
+    borderColor: '#ccc',
+  },
+
+  modalText: {
+    fontSize: 18,
+  },
+
+  closeBtn: {
+    marginTop: 20,
+    backgroundColor: 'black',
+    paddingVertical: 10,
+    borderRadius: 10,
+  },
+
+  closeText: {
+    color: 'white',
+    textAlign: 'center',
+    fontSize: 18,
   },
 });
