@@ -1,0 +1,198 @@
+export interface Item {
+    id: number;
+    name: string;
+    price: number;
+    quantity: number;
+    washOnly: string;
+    starchLevel: string;
+    options: {
+      zipper?: boolean;
+      button?: boolean;
+      washAndFold: boolean;
+    };
+  }
+
+  const items: Item[] = [
+    {
+        id: 1,
+        name: 'T-Shirt',
+        price: 5.0,
+        quantity: 0,
+        washOnly: 'No',
+        starchLevel: 'None',
+        options: { button: false, washAndFold: false },
+      },
+      {
+        id: 2,
+        name: 'Shirt',
+        price: 10.0,
+        quantity: 0,
+        washOnly: 'No',
+        starchLevel: 'Medium',
+        options: { button: true, washAndFold: false },
+      },
+      {
+        id: 3,
+        name: 'Jeans',
+        price: 15.0,
+        quantity: 0,
+        washOnly: 'Yes',
+        starchLevel: 'None',
+        options: { zipper: true, button: false, washAndFold: true },
+      },
+      {
+        id: 4,
+        name: 'Shorts',
+        price: 7.0,
+        quantity: 0,
+        washOnly: 'No',
+        starchLevel: 'Light',
+        options: { zipper: false, button: false, washAndFold: true },
+      },
+      {
+        id: 5,
+        name: 'Jacket',
+        price: 25.0,
+        quantity: 0,
+        washOnly: 'Yes',
+        starchLevel: 'None',
+        options: { zipper: true, button: true, washAndFold: false },
+      },
+      {
+        id: 6,
+        name: 'Sweater',
+        price: 18.0,
+        quantity: 0,
+        washOnly: 'No',
+        starchLevel: 'None',
+        options: { zipper: false, button: false, washAndFold: true },
+      },
+      {
+        id: 7,
+        name: 'Coat',
+        price: 30.0,
+        quantity: 0,
+        washOnly: 'Yes',
+        starchLevel: 'Heavy',
+        options: { zipper: true, button: true, washAndFold: false },
+      },
+      {
+        id: 8,
+        name: 'Skirt',
+        price: 12.0,
+        quantity: 0,
+        washOnly: 'No',
+        starchLevel: 'Light',
+        options: { zipper: false, button: false, washAndFold: true },
+      },
+      {
+        id: 9,
+        name: 'Blazer',
+        price: 22.0,
+        quantity: 0,
+        washOnly: 'Yes',
+        starchLevel: 'Medium',
+        options: { zipper: false, button: true, washAndFold: false },
+      },
+      {
+        id: 10,
+        name: 'Scarf',
+        price: 5.0,
+        quantity: 0,
+        washOnly: 'No',
+        starchLevel: 'None',
+        options: { washAndFold: true },
+      },
+      {
+        id: 11,
+        name: 'Gloves',
+        price: 8.0,
+        quantity: 0,
+        washOnly: 'Yes',
+        starchLevel: 'None',
+        options: { washAndFold: true },
+      },
+      {
+        id: 12,
+        name: 'Socks',
+        price: 3.0,
+        quantity: 0,
+        washOnly: 'No',
+        starchLevel: 'None',
+        options: { washAndFold: true },
+      },
+      {
+        id: 13,
+        name: 'Sweatpants',
+        price: 10.0,
+        quantity: 0,
+        washOnly: 'No',
+        starchLevel: 'None',
+        options: { zipper: false, button: false, washAndFold: true },
+      },
+      {
+        id: 14,
+        name: 'Hoodie',
+        price: 20.0,
+        quantity: 0,
+        washOnly: 'Yes',
+        starchLevel: 'None',
+        options: { zipper: true, button: false, washAndFold: true },
+      },
+      {
+        id: 15,
+        name: 'Dress',
+        price: 25.0,
+        quantity: 0,
+        washOnly: 'No',
+        starchLevel: 'Light',
+        options: { zipper: true, button: false, washAndFold: true },
+      },
+      {
+        id: 16,
+        name: 'Bathrobe',
+        price: 28.0,
+        quantity: 0,
+        washOnly: 'Yes',
+        starchLevel: 'None',
+        options: { zipper: false, button: true, washAndFold: true },
+      },
+      {
+        id: 17,
+        name: 'Tie',
+        price: 6.0,
+        quantity: 0,
+        washOnly: 'No',
+        starchLevel: 'None',
+        options: { washAndFold: true },
+      },
+      {
+        id: 18,
+        name: 'Cap',
+        price: 7.0,
+        quantity: 0,
+        washOnly: 'No',
+        starchLevel: 'None',
+        options: { washAndFold: true },
+      },
+      {
+        id: 19,
+        name: 'Handkerchief',
+        price: 2.0,
+        quantity: 0,
+        washOnly: 'No',
+        starchLevel: 'None',
+        options: { washAndFold: true },
+      },
+      {
+        id: 20,
+        name: 'Blanket',
+        price: 35.0,
+        quantity: 0,
+        washOnly: 'Yes',
+        starchLevel: 'Heavy',
+        options: { zipper: false, button: false, washAndFold: true },
+      },
+  ];
+
+  export default items;
